@@ -29,7 +29,9 @@ export default function Header() {
       }}
     >
       <Box>
-        {!user && <Typography>Please login/register</Typography>}
+        {!user && (
+          <Typography fontWeight={600}>Please Login / Register</Typography>
+        )}
         {user && (userCity === "" || userCity === null) && (
           <Box
             sx={{
@@ -44,7 +46,8 @@ export default function Header() {
         )}
         {user && userCity !== null && userCity !== "" && (
           <Typography>
-            Welcome {user.username}, your city is {userCity}
+            Welcome <strong style={{ color: "blue" }}>{user.username}</strong>,
+            your city is <strong style={{ color: "blue" }}>{userCity}</strong>
           </Typography>
         )}
       </Box>
